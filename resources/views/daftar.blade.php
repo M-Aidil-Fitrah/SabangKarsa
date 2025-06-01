@@ -2,42 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daftar - Visit Sabang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - SabangKarsa</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('storage/css/style.css') }}">
     <link rel="icon" href="{{ asset('storage/img/logo.png') }}" type="image/png">
     @vite('resources/css/app.css')
 </head>
 <body class="bg-[#fbfbfb] text-gray-900">
-    <div class="min-h-screen flex items-center justify-center py-6 px-4">
-        <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Daftar</h2>
-            <form method="POST" action="">
+    <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+        <div class="max-w-md w-full">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Daftar Akun</h2>
 
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Nama</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+            @if ($errors->any())
+                <div class="text-red-500 text-sm mb-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-700">Password</label>
-                    <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                </div>
-                <div class="mb-4">
-                    <label for="role" class="block text-gray-700">Daftar Sebagai</label>
-                    <select id="role" name="role" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                        <option value="user">Pengguna</option>
-                        <option value="provider">Penyedia Layanan</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full bg-amber-400 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-200">Daftar</button>
+            @endif
+
+            <form action="{{ route('register.post') }}" method="POST">
+                @csrf
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-sm text-slate-800 font-medium mb-2 block">Nama</label>
+                        <input name="name" type="text" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Masukkan Nama" value="{{ old('name') }}" />
+                    </div>
+                    <div>
+                        <label class="text-sm text-slate-800 font-medium mb-2 block">Email</label>
+                        <input name="email" type="email" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Masukkan Email" value="{{ old('email') }}" />
+                    </div>
+                    <div>
+                        <label class="text-sm text-slate-800 font-medium mb-2 block">Password</label>
+                            <input name="password" type="password" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Masukkan Password" />
+                        </div>
+                        <div>
+                            <label class="text-sm text-slate-800 font-medium mb-2 block">Konfirmasi Password</label>
+                            <input name="password_confirmation" type="password" required class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md outline-none border focus:border-blue-600 focus:bg-transparent" placeholder="Konfirmasi Password" />
+                        </div>
+                        <div>
+                            <label class="text-sm text-slate-800 font-medium mb-2 block">Daftar Sebagai</label>
+                            <select name="role" class="bg-slate-100 w-full text-sm text-slate-800 px-4 py-3 rounded-md border focus:border-blue-600 focus:bg-transparent" required>
+                                <option value="user" {{ old('role', '') == 'user' ? 'selected' : '' }}>Pengguna / Wisatawan</option>
+                                <option value="provider" {{ old('role', '') == 'provider' ? 'selected' : '' }}>Penyedia Layanan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button type="submit" class="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-amber-400 hover:bg-amber-700 focus:outline-none">
+                            Daftar
+                        </button>
+                    </div>
+
+                <p class="text-sm mt-6 text-slate-500 text-center">
+                    Sudah punya akun? <a href="{{ route('login') }}" class="text-blue-600 font-medium hover:underline">Masuk di sini</a>
+                </p>
             </form>
-            <p class="text-center text-gray-600 mt-4">
-                Sudah punya akun? <a href="{{ route('login') }}" class="text-blue-500 hover:underline">Masuk</a>
-            </p>
         </div>
     </div>
     <script src="{{ asset('storage/js/script.js') }}"></script>

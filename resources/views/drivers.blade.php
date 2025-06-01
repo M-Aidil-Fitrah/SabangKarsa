@@ -145,7 +145,7 @@
                                 <span class="font-bold text-lg">Rp 500.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                                 <span class="font-bold text-lg">Rp 600.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                                 <span class="font-bold text-lg">Rp 450.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@
                                 <span class="font-bold text-lg">Rp 550.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                                 <span class="font-bold text-lg">Rp 700.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
                                 <span class="font-bold text-lg">Rp 650.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -467,7 +467,7 @@
                                 <span class="font-bold text-lg">Mulai Rp 300.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -495,7 +495,7 @@
                                 <span class="font-bold text-lg">Mulai Rp 100.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -523,7 +523,7 @@
                                 <span class="font-bold text-lg">Mulai Rp 400.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -551,7 +551,7 @@
                                 <span class="font-bold text-lg">Mulai Rp 80.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>
@@ -579,7 +579,7 @@
                                 <span class="font-bold text-lg">Mulai Rp 250.000</span>
                                 <span class="text-gray-600 text-sm">/ hari</span>
                             </div>
-                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Hubungi</button>
+                            <button class="bg-amber-400 text-black px-4 py-2 rounded hover:bg-amber-500 transition text-sm btn-amber">Pesan Melalui Aplikasi</button>
                         </div>
                     </div>
                 </div>

@@ -56,8 +56,16 @@
                     <span>EN</span>
                 </button>
             </div>
-            <a href="{{ route('login') }}">
-            <button class="bg-amber-400 text-black px-6 py-2 rounded-lg hover:bg-amber-500 transition btn-amber">Masuk</button></a>
+            
+            @guest
+                <a href="{{ route('login') }}">
+                <button class="bg-amber-400 text-black px-6 py-2 rounded-lg hover:bg-amber-500 transition btn-amber">Masuk</button></a>
+            @else
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-amber-400 text-black px-6 py-2 rounded-lg hover:bg-amber-500 transition btn-amber">Keluar</button>
+                </form>
+            @endguest
             <button class="md:hidden text-white" id="mobileMenuButton">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
