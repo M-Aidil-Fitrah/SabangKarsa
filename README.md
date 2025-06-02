@@ -1,142 +1,172 @@
-SabangKarsa
-SabangKarsa adalah platform web yang dirancang untuk memudahkan wisatawan menjelajahi keindahan dan kekayaan Pulau Sabang, Aceh. Aplikasi ini menyediakan informasi lengkap mengenai akomodasi, driver, tour guide, agenda event, serta tempat-tempat menarik untuk dijelajahi (stroll & kuliner), membantu merencanakan perjalanan yang tak terlupakan.
+# 🌴 SabangKarsa
 
-Fitur Utama
-Daftar Akomodasi: Temukan berbagai pilihan penginapan, mulai dari hotel hingga homestay, lengkap dengan detail, fasilitas, dan kontak pemilik.
+**SabangKarsa** adalah platform web yang dirancang untuk memudahkan wisatawan menjelajahi keindahan dan kekayaan Pulau Sabang, Aceh. Aplikasi ini menyediakan informasi lengkap mengenai akomodasi, driver, pemandu wisata, agenda acara, serta tempat-tempat menarik untuk dijelajahi seperti destinasi wisata dan kuliner lokal. Tujuannya adalah membantu wisatawan merencanakan perjalanan yang tak terlupakan.
 
-Penyewaan Driver: Cari driver lokal yang terverifikasi dengan berbagai jenis kendaraan untuk kebutuhan transportasi Anda di Sabang.
+---
 
-Pemandu Wisata (Tour Guide): Temukan tour guide berpengalaman dengan spesialisasi beragam (sejarah, kuliner, petualangan, dll.) untuk memandu perjalanan Anda.
+## ✨ Fitur Utama
 
-Jelajah & Kuliner (Stroll): Jelajahi daftar tempat makan lokal, destinasi wisata tersembunyi, dan aktivitas menarik di sekitar Sabang.
+- **Daftar Akomodasi:** Temukan berbagai pilihan penginapan mulai dari hotel hingga homestay lengkap dengan fasilitas, deskripsi, dan kontak.
+- **Penyewaan Driver:** Cari driver lokal yang terverifikasi dengan berbagai jenis kendaraan sesuai kebutuhan transportasi Anda di Sabang.
+- **Pemandu Wisata (Tour Guide):** Temukan pemandu wisata berpengalaman dengan spesialisasi beragam (sejarah, kuliner, petualangan, dll).
+- **Jelajah & Kuliner (Stroll):** Eksplorasi tempat makan lokal, destinasi tersembunyi, dan aktivitas seru lainnya.
+- **Agenda Event:** Dapatkan info terkini mengenai event, festival, atau kegiatan budaya di Sabang.
+- **Profil Penyedia Jasa:** Penyedia jasa dapat mendaftarkan dan mengelola layanan mereka secara mandiri.
+- **Filter & Pencarian:** Temukan layanan berdasarkan kategori, lokasi, harga, dan lainnya.
+- **Integrasi WhatsApp:** Hubungi penyedia layanan langsung melalui WhatsApp dari halaman detail.
+- **Manajemen Gambar:** Upload gambar pendukung untuk tiap layanan agar tampil lebih menarik.
 
-Agenda Event: Dapatkan informasi terkini mengenai event, festival, atau kegiatan budaya yang sedang berlangsung di Sabang.
+---
 
-Profil Penyedia Jasa (Provider): Penyedia jasa (akomodasi, driver, tour guide, dll.) dapat mendaftar dan mengelola daftar layanan mereka.
+## 🛠️ Teknologi yang Digunakan
 
-Sistem Filter & Pencarian: Filter dan cari layanan berdasarkan kriteria spesifik untuk menemukan yang paling sesuai dengan kebutuhan Anda.
+- **Backend:** Laravel (PHP Framework)
+- **Database:** SQLite (pengembangan lokal), MySQL/PostgreSQL (produksi)
+- **Frontend:** Blade Templates + Tailwind CSS
+- **JavaScript:** Vanilla JS untuk fitur interaktif (filter, validasi, dll.)
+- **Deployment (opsional):** Docker, Nginx (bisa disesuaikan)
 
-Integrasi WhatsApp: Hubungi penyedia jasa secara langsung melalui WhatsApp dari halaman detail layanan.
+---
 
-Manajemen Gambar: Upload gambar untuk setiap layanan untuk tampilan yang lebih menarik.
+## ⚙️ Persyaratan Sistem
 
-Teknologi yang Digunakan
-Backend: Laravel (PHP Framework)
+- PHP >= 8.1
+- Composer
+- Node.js & npm (untuk Tailwind CSS dan Vite)
+- SQLite / MySQL / PostgreSQL
 
-Database: SQLite (untuk pengembangan lokal), MySQL/PostgreSQL (untuk produksi)
+---
 
-Frontend: Blade Templates, Tailwind CSS
+## 🚀 Panduan Instalasi (Lokal)
 
-JavaScript: Vanilla JS untuk fungsionalitas filter sisi klien.
-
-Deployment: (Opsional: sebutkan jika ada rencana deployment spesifik, misal Docker, Nginx, dll.)
-
-Persyaratan Sistem
-PHP >= 8.1
-
-Composer
-
-Node.js & npm (untuk Vite/Tailwind CSS)
-
-Database (SQLite, MySQL, PostgreSQL)
-
-Panduan Instalasi (Lokal)
-Ikuti langkah-langkah berikut untuk menjalankan proyek SabangKarsa di lingkungan lokal Anda:
-
-Clone Repositori:
-
-git clone sabangkarsa
-cd sabangkarsa
-
-Instal Dependensi Composer:
-
+### 1. Clone Repositori
+```bash
+git clone https://github.com/M-Aidil-Fitrah/SabangKarsa.git
+cd SabangKarsa
+nstal Dependensi PHP
+bash
+Copy
+Edit
 composer install
-
-Buat File .env:
-Salin file .env.example menjadi .env:
-
+3. Salin File .env
+bash
+Copy
+Edit
 cp .env.example .env
-
-Atur Kunci Aplikasi:
-
+4. Generate Kunci Aplikasi
+bash
+Copy
+Edit
 php artisan key:generate
+5. Konfigurasi Database
+Gunakan SQLite (direkomendasikan untuk lokal):
 
-Konfigurasi Database:
-Buka file .env dan atur konfigurasi database Anda. Secara default, Laravel menggunakan MySQL. Jika Anda ingin menggunakan SQLite (lebih mudah untuk pengembangan lokal), tambahkan baris berikut dan hapus/komentari konfigurasi MySQL:
-
+env
+Copy
+Edit
 DB_CONNECTION=sqlite
-# DB_DATABASE=/path/to/your/database.sqlite (opsional, jika tidak diatur, akan membuat file database.sqlite di folder database)
+Lalu buat file SQLite kosong:
 
-Jika Anda menggunakan SQLite, buat file database kosong:
-
+bash
+Copy
+Edit
 touch database/database.sqlite
+Jika menggunakan MySQL/PostgreSQL, sesuaikan konfigurasi .env Anda.
 
-Jalankan Migrasi Database:
-Ini akan membuat tabel-tabel yang diperlukan di database Anda.
-
+6. Jalankan Migrasi
+bash
+Copy
+Edit
 php artisan migrate
-
-Jika Anda mengalami masalah migrasi (misal table already exists), dan Anda di tahap pengembangan, Anda bisa mencoba:
-
-php artisan migrate:fresh --seed # --seed opsional jika Anda punya seeder untuk data dummy
-
-Instal Dependensi NPM dan Kompilasi Aset Frontend:
-
+# Atau, untuk development dengan data dummy:
+php artisan migrate:fresh --seed
+7. Instal Dependensi Frontend
+bash
+Copy
+Edit
 npm install
-npm run dev # Untuk development
-# npm run build # Untuk produksi
-
-Buat Symbolic Link untuk Storage:
-Ini diperlukan agar gambar yang diunggah dapat diakses dari browser.
-
+npm run dev # atau npm run build untuk produksi
+8. Buat Symlink untuk Storage
+bash
+Copy
+Edit
 php artisan storage:link
-
-Jalankan Server Pengembangan Laravel:
-
+9. Jalankan Server Laravel
+bash
+Copy
+Edit
 php artisan serve
+Akses aplikasi melalui: http://127.0.0.1:8000
 
-Akses Aplikasi:
-Buka browser Anda dan kunjungi http://127.0.0.1:8000 (atau alamat yang ditampilkan oleh php artisan serve).
+🧭 Penggunaan
+Pendaftaran
+Pengguna dapat mendaftar sebagai user atau provider.
 
-Penggunaan
-Pendaftaran: Pengguna dapat mendaftar sebagai user atau provider.
+Login
+Login User: /login
 
-Login: Login sebagai user atau provider melalui halaman login yang berbeda (/login untuk user, /loginp untuk provider).
+Login Provider: /loginp
 
-Menambahkan Layanan (untuk Provider):
+Menambahkan Layanan (untuk Provider)
+Pastikan telah membuat profil provider.
 
-Setelah login sebagai provider, pastikan Anda telah membuat profil provider terlebih dahulu (jika fitur ini diaktifkan).
+Tambahkan layanan melalui:
 
-Akses halaman /accommodations/create, /drivers/create, /tour-guides/create, /strolls/create, atau /agendas/create untuk menambahkan layanan baru.
+/accommodations/create
 
-Melihat Daftar Layanan:
+/drivers/create
 
+/tour-guides/create
+
+/strolls/create
+
+/agendas/create
+
+Melihat Daftar Layanan
 Akomodasi: /accommodations
 
 Driver: /drivers
 
-Tour Guide: /tourguide (atau /tour-guides tergantung route Anda)
+Tour Guide: /tour-guides
 
-Stroll & Kuliner: /stroll (atau /strolls tergantung route Anda)
+Jelajah & Kuliner: /strolls
 
-Agenda: /agenda (atau /agendas tergantung route Anda)
+Agenda Event: /agendas
 
-Melihat Detail Layanan: Klik pada kartu layanan di halaman daftar untuk melihat detail lengkap.
+Melihat Detail Layanan
+Klik kartu layanan pada halaman daftar untuk melihat informasi detail.
 
-Kontribusi
-Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+🤝 Kontribusi
+Kami sangat terbuka terhadap kontribusi dari komunitas! Ikuti langkah berikut untuk berkontribusi:
 
 Fork repositori ini.
 
-Buat branch baru untuk fitur Anda (git checkout -b feature/nama-fitur).
+Buat branch baru:
 
-Lakukan perubahan Anda dan commit (git commit -m 'Add new feature').
+bash
+Copy
+Edit
+git checkout -b feature/nama-fitur
+Lakukan perubahan, lalu commit:
 
-Push ke branch Anda (git push origin feature/nama-fitur).
+bash
+Copy
+Edit
+git commit -m "Add nama fitur"
+Push ke branch:
 
-Buat Pull Request baru.
+bash
+Copy
+Edit
+git push origin feature/nama-fitur
+Buat Pull Request.
 
-Lisensi
-Proyek SabangKarsa adalah perangkat lunak open-source yang dilisensikan di bawah MIT License.
+📸 Screenshot
+Tambahkan tangkapan layar aplikasi di bagian ini untuk memperjelas tampilan dan fitur.
 
-Catatan: Pastikan untuk mengganti dengan URL repositori GitHub Anda yang sebenarnya. Anda juga bisa menambahkan bagian "Screenshot" jika Anda memiliki gambar tampilan aplikasi.
+📄 Lisensi
+Proyek ini dilisensikan di bawah MIT License.
+
+🔗 Tautan Repositori
+https://github.com/M-Aidil-Fitrah/SabangKarsa
+
