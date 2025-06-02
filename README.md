@@ -1,6 +1,6 @@
 # 🌴 SabangKarsa
 
-**SabangKarsa** adalah platform web yang dirancang untuk memudahkan wisatawan menjelajahi keindahan dan kekayaan Pulau Sabang, Aceh. Aplikasi ini menyediakan informasi lengkap mengenai akomodasi, driver, pemandu wisata, agenda acara, serta tempat-tempat menarik untuk dijelajahi seperti destinasi wisata dan kuliner lokal. Tujuannya adalah membantu wisatawan merencanakan perjalanan yang tak terlupakan.
+**SabangKarsa** adalah platform web yang dirancang untuk memudahkan wisatawan menjelajahi keindahan dan kekayaan Pulau Sabang, Aceh. Aplikasi ini menyediakan informasi lengkap mengenai akomodasi, driver, pemandu wisata, kuliner, serta agenda event di Sabang.
 
 ---
 
@@ -43,130 +43,127 @@
 ```bash
 git clone https://github.com/M-Aidil-Fitrah/SabangKarsa.git
 cd SabangKarsa
-nstal Dependensi PHP
-bash
-Copy
-Edit
+```
+
+### 2. Instal Dependensi PHP
+```bash
 composer install
-3. Salin File .env
-bash
-Copy
-Edit
+```
+
+### 3. Salin File .env
+```bash
 cp .env.example .env
-4. Generate Kunci Aplikasi
-bash
-Copy
-Edit
+```
+
+### 4. Generate Kunci Aplikasi
+```bash
 php artisan key:generate
-5. Konfigurasi Database
+```
+
+### 5. Konfigurasi Database
+
 Gunakan SQLite (direkomendasikan untuk lokal):
 
-env
-Copy
-Edit
+Ubah di file `.env`:
+```
 DB_CONNECTION=sqlite
+```
+
 Lalu buat file SQLite kosong:
-
-bash
-Copy
-Edit
+```bash
 touch database/database.sqlite
-Jika menggunakan MySQL/PostgreSQL, sesuaikan konfigurasi .env Anda.
+```
+Jika menggunakan MySQL/PostgreSQL, sesuaikan konfigurasi `.env` Anda.
 
-6. Jalankan Migrasi
-bash
-Copy
-Edit
+### 6. Jalankan Migrasi
+```bash
 php artisan migrate
 # Atau, untuk development dengan data dummy:
 php artisan migrate:fresh --seed
-7. Instal Dependensi Frontend
-bash
-Copy
-Edit
+```
+
+### 7. Instal Dependensi Frontend
+```bash
 npm install
 npm run dev # atau npm run build untuk produksi
-8. Buat Symlink untuk Storage
-bash
-Copy
-Edit
-php artisan storage:link
-9. Jalankan Server Laravel
-bash
-Copy
-Edit
-php artisan serve
-Akses aplikasi melalui: http://127.0.0.1:8000
+```
 
-🧭 Penggunaan
-Pendaftaran
+### 8. Buat Symlink untuk Storage
+```bash
+php artisan storage:link
+```
+
+### 9. Jalankan Server Laravel
+```bash
+php artisan serve
+```
+
+Akses aplikasi melalui: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+---
+
+## 🧭 Penggunaan
+
+### Pendaftaran
 Pengguna dapat mendaftar sebagai user atau provider.
 
-Login
-Login User: /login
+### Login
+- Login User: `/login`
+- Login Provider: `/loginp`
 
-Login Provider: /loginp
+### Menambahkan Layanan (untuk Provider)
+Pastikan telah membuat profil provider terlebih dahulu. Tambahkan layanan melalui:
+- `/accommodations/create`
+- `/drivers/create`
+- `/tour-guides/create`
+- `/strolls/create`
+- `/agendas/create`
 
-Menambahkan Layanan (untuk Provider)
-Pastikan telah membuat profil provider.
+### Melihat Daftar Layanan
+- **Akomodasi:** `/accommodations`
+- **Driver:** `/drivers`
+- **Tour Guide:** `/tour-guides`
+- **Jelajah & Kuliner:** `/strolls`
+- **Agenda Event:** `/agendas`
 
-Tambahkan layanan melalui:
-
-/accommodations/create
-
-/drivers/create
-
-/tour-guides/create
-
-/strolls/create
-
-/agendas/create
-
-Melihat Daftar Layanan
-Akomodasi: /accommodations
-
-Driver: /drivers
-
-Tour Guide: /tour-guides
-
-Jelajah & Kuliner: /strolls
-
-Agenda Event: /agendas
-
-Melihat Detail Layanan
+### Melihat Detail Layanan
 Klik kartu layanan pada halaman daftar untuk melihat informasi detail.
 
-🤝 Kontribusi
+---
+
+## 🤝 Kontribusi
+
 Kami sangat terbuka terhadap kontribusi dari komunitas! Ikuti langkah berikut untuk berkontribusi:
 
-Fork repositori ini.
+1. Fork repositori ini.
+2. Buat branch baru:
+    ```bash
+    git checkout -b feature/nama-fitur
+    ```
+3. Lakukan perubahan, lalu commit:
+    ```bash
+    git commit -m "Add nama fitur"
+    ```
+4. Push ke branch:
+    ```bash
+    git push origin feature/nama-fitur
+    ```
+5. Buat Pull Request.
 
-Buat branch baru:
+---
 
-bash
-Copy
-Edit
-git checkout -b feature/nama-fitur
-Lakukan perubahan, lalu commit:
+## 📸 Screenshot
 
-bash
-Copy
-Edit
-git commit -m "Add nama fitur"
-Push ke branch:
-
-bash
-Copy
-Edit
-git push origin feature/nama-fitur
-Buat Pull Request.
-
-📸 Screenshot
 Tambahkan tangkapan layar aplikasi di bagian ini untuk memperjelas tampilan dan fitur.
 
-📄 Lisensi
+---
+
+## 📄 Lisensi
+
 Proyek ini dilisensikan di bawah MIT License.
 
-🔗 Tautan Repositori
-https://github.com/M-Aidil-Fitrah/SabangKarsa
+---
 
+## 🔗 Tautan Repositori
+
+[https://github.com/M-Aidil-Fitrah/SabangKarsa](https://github.com/M-Aidil-Fitrah/SabangKarsa)
