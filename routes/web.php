@@ -7,14 +7,8 @@ use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\StrollController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\AgendaController;
 use Illuminate\Support\Facades\Route;
-
-// ... route-route lainnya
-
-Route::get('/accommodations/{accommodation}', [AccommodationController::class, 'show'])->name('accommodations.show');
-Route::resource('drivers', DriverController::class); // Pastikan baris ini ada dan tidak dikomentari
-
 
 Route::get('/', function () {
     return view('home');
@@ -25,11 +19,29 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+Route::get('/destinations/create', [DestinationController::class, 'create'])->name('destinations.create')->middleware('auth', 'role:provider');
 Route::post('/destinations', [DestinationController::class, 'store'])->name('destinations.store')->middleware('auth', 'role:provider');
+Route::get('/destinations/{id}', [DestinationController::class, 'show'])->name('destinations.show');
 
-Route::get('/agenda', function () {
-    return view('agenda');
-})->name('agenda');
+Route::get('/drivers', [DriverController::class, 'index'])->name('drivers');
+Route::post('/drivers', [DriverController::class, 'store'])->name('drivers.store')->middleware('auth', 'role:provider');
+
+Route::get('/accommodations', [AccommodationController::class, 'index'])->name('accommodations');
+Route::get('/accommodations/create', [AccommodationController::class, 'create'])->name('accommodations.create')->middleware('auth', 'role:provider');
+Route::post('/accommodations', [AccommodationController::class, 'store'])->name('accommodations.store')->middleware('auth', 'role:provider');
+
+Route::get('/tourguide', [TourGuideController::class, 'index'])->name('tourguide');
+Route::post('/tour-guides', [TourGuideController::class, 'store'])->name('tour-guides.store')->middleware('auth', 'role:provider');
+
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda');
+Route::get('/agendas/create', [AgendaController::class, 'create'])->name('agendas.create')->middleware('auth', 'role:provider');
+Route::post('/agendas', [AgendaController::class, 'store'])->name('agendas.store')->middleware('auth', 'role:provider');
+Route::get('/agendas/{id}', [AgendaController::class, 'show'])->name('agendas.show');
+
+Route::get('/stroll', [StrollController::class, 'index'])->name('stroll');
+Route::get('/strolls/create', [StrollController::class, 'create'])->name('strolls.create')->middleware('auth', 'role:provider');
+Route::post('/strolls', [StrollController::class, 'store'])->name('strolls.store')->middleware('auth', 'role:provider');
+Route::get('/strolls/{id}', [StrollController::class, 'show'])->name('strolls.show');
 
 Route::get('/travelkit', function () {
     return view('travelkit');

@@ -10,7 +10,7 @@ class StrollController extends Controller
 {
     public function index()
     {
-        $strolls = Stroll::all();
+        $strolls = Stroll::paginate(3); // Paginasi, 3 item per halaman
         return view('stroll', compact('strolls'));
     }
 
@@ -20,7 +20,7 @@ class StrollController extends Controller
         if (!$user || $user->role !== 'provider') {
             return redirect()->route('login')->with('message', 'Only providers can add strolls.');
         }
-        return view('stroll'); // Form tambah ada di view stroll
+        return view('strolls.create');
     }
 
     public function store(Request $request)
@@ -47,5 +47,11 @@ class StrollController extends Controller
         Stroll::create($data);
 
         return redirect()->route('stroll')->with('success', 'Stroll added successfully.');
+    }
+
+    public function show($id)
+    {
+        $stroll = Stroll::findOrFail($id);
+        return view('strolls.show', compact('stroll'));
     }
 }
