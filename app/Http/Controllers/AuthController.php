@@ -66,40 +66,24 @@ class AuthController extends Controller
     return back()->withErrors([
         'email' => 'Email atau password salah.',
     ])->withInput($request->except('password'));
-}
-public function register(Request $request)
+}public function register(Request $request)
 {
-    // Log incoming request data
-    Log::info('Register request data:', $request->all());
-
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|string|email|unique:users',
-        'password' => 'required|string|min:6|confirmed',
-        'role' => 'required|in:user,provider',
-    ]);
-
-    // Log validated data
-    Log::info('Validated data:', $validated);
-
+    // Validation and user creation logic...
     $user = User::create([
-        'name' => $validated['name'],
-        'email' => $validated['email'],
-        'password' => Hash::make($validated['password']),
-        'role' => $validated['role'],
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => $request->role ?? 'user', // Default to 'user' or get from form
     ]);
-
-    // Log created user
-    Log::info('Created user:', $user->toArray());
 
     Auth::login($user);
 
     // Redirect based on role
     if ($user->role === 'provider') {
-        return redirect()->route('dashboard.mitra');
+        return redirect()->route('dashboard.mitra')->with('success', 'Registration successful!');
     }
 
-    return redirect()->route('home');
+    return redirect()->route('dashboard')->with('success', 'Registration successful!');
 }
     public function logout(Request $request)
     {

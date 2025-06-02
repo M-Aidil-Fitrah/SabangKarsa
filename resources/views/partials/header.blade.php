@@ -34,15 +34,15 @@
                         @click.outside="open = false"
                         x-transition
                         class="absolute bg-white shadow-lg rounded-md mt-2 w-48 z-50">
-                        <a href="{{ route('accommodations') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">PENGINAPAN</a>
-                        <a href="{{ route('drivers') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">DRIVER & RENTAL</a>
-                        <a href="{{ route('tourguide') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">TOUR GUIDE</a>
+                        <a href="{{ route('accommodations.index') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">PENGINAPAN</a>
+                        <a href="{{ route('drivers.index') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">DRIVER & RENTAL</a>
+                        <a href="{{ route('tour-guides.index') }}" class="block px-4 py-2 text-gray-800 hover:bg-amber-100">TOUR GUIDE</a>
 
                     </div>
                 </div>
 
                 <a href="{{ route('agenda') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">AGENDA</a>
-                <a href="{{ route('stroll') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">STROLL & KULINER</a>
+                <a href="{{ route('strolls.index') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">STROLL & KULINER</a>
                 <a href="{{ route('travelkit') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">TRAVEL KIT</a>
 
                 <a href="{{ route('about') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">TENTANG KAMI</a>

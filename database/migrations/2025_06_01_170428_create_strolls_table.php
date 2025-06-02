@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('category')->default('kuliner'); // Misalnya kuliner atau tempat jalan-jalan
             $table->string('image')->nullable();
-            $table->foreignId('provider_id')->constrained('users')->onDelete('cascade')->nullable();
+            $table->foreignId('provider_id')    ->constrained('users')->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

@@ -47,7 +47,7 @@
 <section class="py-16 bg-white pr-50 pl-50 mt-5">
     <div class="flex justify-between">
     <h1 class="text-5xl font-black text-black">Let`s Stroll Around</h1>
-    <p class="text-amber-400 mt-3"><a href="{{ route('stroll') }}">Lihat Selengkapnya</a></p>
+    <p class="text-amber-400 mt-3"><a href="{{ route('strolls.index') }}">Lihat Selengkapnya</a></p>
 </div>
     <div class="flex gap-4 overflow-x-auto mt-10 scroll-smooth">        {{-- card --}}
         <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
@@ -57,7 +57,7 @@
                     Kulineran
                   </p>
 
-                  <p class="text-amber-500"><a href="{{ route('stroll') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                  <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
               </div>
             <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -77,7 +77,7 @@
                     Peresmian Revitalisasi Monumen
                   </p>
 
-                  <p class="text-amber-500"><a href="{{ route('stroll') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                  <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
               </div>
             <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -97,7 +97,7 @@
                   Menjelajahi Pusat Kota
                 </p>
 
-                <p class="text-amber-500"><a href="{{ route('stroll') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
             </div>
           <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -268,7 +268,7 @@
                         </svg>
                     </button>
                 </div>
-                <a href="{{ route('tourguide') }}" class="text-black hover:text-white">Lihat Semua Pemandu</a>
+                <a href="{{ route('tour-guides.index') }}" class="text-black hover:text-white">Lihat Semua Pemandu</a>
             </div>
             <!-- Carousel Container -->
             <div class="relative overflow-hidden ">

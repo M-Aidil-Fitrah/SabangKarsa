@@ -20,6 +20,18 @@
 <!-- Content Section -->
 
 <section class="py-16 bg-white mt-45">
+    <section class="py-8">
+    <div class="container mx-auto px-6">
+        @auth
+            @if(auth()->user()->role === 'provider')
+                <div class="flex justify-end mb-6">
+                    <a href="{{ route('accommodations.create') }}" class="bg-amber-400 text-black px-6 py-3 rounded hover:bg-amber-500 transition font-medium btn-amber">Add New Accommodation</a>
+                </div>
+            @endif
+        @endauth
+    </div>
+</section>
+
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Daftar Pemandu Wisata</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
