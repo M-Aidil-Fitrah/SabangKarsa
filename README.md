@@ -24,7 +24,7 @@
 - **Database:** SQLite (pengembangan lokal), MySQL/PostgreSQL (produksi)
 - **Frontend:** Blade Templates + Tailwind CSS
 - **JavaScript:** Vanilla JS untuk fitur interaktif (filter, validasi, dll.)
-- **Deployment (opsional):** Docker, Nginx (bisa disesuaikan)
+
 
 ---
 
