@@ -1,70 +1,142 @@
-<<<<<<< HEAD
-# Visit-Sabang
-=======
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+SabangKarsa
+SabangKarsa adalah platform web yang dirancang untuk memudahkan wisatawan menjelajahi keindahan dan kekayaan Pulau Sabang, Aceh. Aplikasi ini menyediakan informasi lengkap mengenai akomodasi, driver, tour guide, agenda event, serta tempat-tempat menarik untuk dijelajahi (stroll & kuliner), membantu merencanakan perjalanan yang tak terlupakan.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Fitur Utama
+Daftar Akomodasi: Temukan berbagai pilihan penginapan, mulai dari hotel hingga homestay, lengkap dengan detail, fasilitas, dan kontak pemilik.
 
-## About Laravel
+Penyewaan Driver: Cari driver lokal yang terverifikasi dengan berbagai jenis kendaraan untuk kebutuhan transportasi Anda di Sabang.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Pemandu Wisata (Tour Guide): Temukan tour guide berpengalaman dengan spesialisasi beragam (sejarah, kuliner, petualangan, dll.) untuk memandu perjalanan Anda.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Jelajah & Kuliner (Stroll): Jelajahi daftar tempat makan lokal, destinasi wisata tersembunyi, dan aktivitas menarik di sekitar Sabang.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Agenda Event: Dapatkan informasi terkini mengenai event, festival, atau kegiatan budaya yang sedang berlangsung di Sabang.
 
-## Learning Laravel
+Profil Penyedia Jasa (Provider): Penyedia jasa (akomodasi, driver, tour guide, dll.) dapat mendaftar dan mengelola daftar layanan mereka.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Sistem Filter & Pencarian: Filter dan cari layanan berdasarkan kriteria spesifik untuk menemukan yang paling sesuai dengan kebutuhan Anda.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Integrasi WhatsApp: Hubungi penyedia jasa secara langsung melalui WhatsApp dari halaman detail layanan.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Manajemen Gambar: Upload gambar untuk setiap layanan untuk tampilan yang lebih menarik.
 
-## Laravel Sponsors
+Teknologi yang Digunakan
+Backend: Laravel (PHP Framework)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Database: SQLite (untuk pengembangan lokal), MySQL/PostgreSQL (untuk produksi)
 
-### Premium Partners
+Frontend: Blade Templates, Tailwind CSS
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+JavaScript: Vanilla JS untuk fungsionalitas filter sisi klien.
 
-## Contributing
+Deployment: (Opsional: sebutkan jika ada rencana deployment spesifik, misal Docker, Nginx, dll.)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Persyaratan Sistem
+PHP >= 8.1
 
-## Code of Conduct
+Composer
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Node.js & npm (untuk Vite/Tailwind CSS)
 
-## Security Vulnerabilities
+Database (SQLite, MySQL, PostgreSQL)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Panduan Instalasi (Lokal)
+Ikuti langkah-langkah berikut untuk menjalankan proyek SabangKarsa di lingkungan lokal Anda:
 
-## License
+Clone Repositori:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> 562c2d2 (Semua Pengerjaan)
+git clone sabangkarsa
+cd sabangkarsa
+
+Instal Dependensi Composer:
+
+composer install
+
+Buat File .env:
+Salin file .env.example menjadi .env:
+
+cp .env.example .env
+
+Atur Kunci Aplikasi:
+
+php artisan key:generate
+
+Konfigurasi Database:
+Buka file .env dan atur konfigurasi database Anda. Secara default, Laravel menggunakan MySQL. Jika Anda ingin menggunakan SQLite (lebih mudah untuk pengembangan lokal), tambahkan baris berikut dan hapus/komentari konfigurasi MySQL:
+
+DB_CONNECTION=sqlite
+# DB_DATABASE=/path/to/your/database.sqlite (opsional, jika tidak diatur, akan membuat file database.sqlite di folder database)
+
+Jika Anda menggunakan SQLite, buat file database kosong:
+
+touch database/database.sqlite
+
+Jalankan Migrasi Database:
+Ini akan membuat tabel-tabel yang diperlukan di database Anda.
+
+php artisan migrate
+
+Jika Anda mengalami masalah migrasi (misal table already exists), dan Anda di tahap pengembangan, Anda bisa mencoba:
+
+php artisan migrate:fresh --seed # --seed opsional jika Anda punya seeder untuk data dummy
+
+Instal Dependensi NPM dan Kompilasi Aset Frontend:
+
+npm install
+npm run dev # Untuk development
+# npm run build # Untuk produksi
+
+Buat Symbolic Link untuk Storage:
+Ini diperlukan agar gambar yang diunggah dapat diakses dari browser.
+
+php artisan storage:link
+
+Jalankan Server Pengembangan Laravel:
+
+php artisan serve
+
+Akses Aplikasi:
+Buka browser Anda dan kunjungi http://127.0.0.1:8000 (atau alamat yang ditampilkan oleh php artisan serve).
+
+Penggunaan
+Pendaftaran: Pengguna dapat mendaftar sebagai user atau provider.
+
+Login: Login sebagai user atau provider melalui halaman login yang berbeda (/login untuk user, /loginp untuk provider).
+
+Menambahkan Layanan (untuk Provider):
+
+Setelah login sebagai provider, pastikan Anda telah membuat profil provider terlebih dahulu (jika fitur ini diaktifkan).
+
+Akses halaman /accommodations/create, /drivers/create, /tour-guides/create, /strolls/create, atau /agendas/create untuk menambahkan layanan baru.
+
+Melihat Daftar Layanan:
+
+Akomodasi: /accommodations
+
+Driver: /drivers
+
+Tour Guide: /tourguide (atau /tour-guides tergantung route Anda)
+
+Stroll & Kuliner: /stroll (atau /strolls tergantung route Anda)
+
+Agenda: /agenda (atau /agendas tergantung route Anda)
+
+Melihat Detail Layanan: Klik pada kartu layanan di halaman daftar untuk melihat detail lengkap.
+
+Kontribusi
+Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+
+Fork repositori ini.
+
+Buat branch baru untuk fitur Anda (git checkout -b feature/nama-fitur).
+
+Lakukan perubahan Anda dan commit (git commit -m 'Add new feature').
+
+Push ke branch Anda (git push origin feature/nama-fitur).
+
+Buat Pull Request baru.
+
+Lisensi
+Proyek SabangKarsa adalah perangkat lunak open-source yang dilisensikan di bawah MIT License.
+
+Catatan: Pastikan untuk mengganti dengan URL repositori GitHub Anda yang sebenarnya. Anda juga bisa menambahkan bagian "Screenshot" jika Anda memiliki gambar tampilan aplikasi.
