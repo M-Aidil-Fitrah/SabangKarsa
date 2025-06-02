@@ -10,7 +10,7 @@ class DestinationController extends Controller
 {
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::paginate(6); // Paginasi, 6 item per halaman
         return view('destination', compact('destinations'));
     }
 
@@ -20,7 +20,7 @@ class DestinationController extends Controller
         if (!$user || $user->role !== 'provider') {
             return redirect()->route('login')->with('message', 'Only providers can add destinations.');
         }
-        return view('destination'); // Form tambah ada di view destination
+        return view('destinations.create');
     }
 
     public function store(Request $request)
@@ -34,6 +34,9 @@ class DestinationController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'location' => 'required|string|max:255',
+            'category' => 'required|in:pantai,gunung,diving,sejarah',
+            'rating' => 'required|numeric|between:0,5', // Rating antara 0-5
+            'distance_from_city_center' => 'required|string|max:50', // Jarak, misalnya "15 km"
             'image' => 'nullable|image|max:2048',
         ]);
 
@@ -46,5 +49,11 @@ class DestinationController extends Controller
         Destination::create($data);
 
         return redirect()->route('destination')->with('success', 'Destination added successfully.');
+    }
+
+    public function show($id)
+    {
+        $destination = Destination::findOrFail($id);
+        return view('destinations.show', compact('destination'));
     }
 }

@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Destination extends Model
+class Agenda extends Model
 {
-    protected $fillable = ['name', 'description', 'location', 'category', 'rating', 'distance_from_city_center', 'image', 'provider_id'];
+    protected $fillable = ['name', 'description', 'image', 'provider_id'];
 
     public function provider()
     {

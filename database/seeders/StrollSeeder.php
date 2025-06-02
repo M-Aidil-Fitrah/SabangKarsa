@@ -16,8 +16,34 @@ class StrollSeeder extends Seeder
         }
 
         $strolls = [
-            ['name' => 'Warung Makan Iboih', 'description' => 'Local seafood restaurant', 'location' => 'Pantai Iboih', 'category' => 'kuliner', 'image' => 'storage/img/carou11.jpg'],
-            ['name' => 'Jalan Pasar Sabang', 'description' => 'Scenic walking area', 'location' => 'Sabang City', 'category' => 'jalan-jalan', 'image' => 'storage/img/carou12.jpg'],
+            [
+                'name' => 'Coastal Walkway',
+                'description' => 'Enjoy a serene walk along the coast with stunning ocean views and fresh sea breeze.',
+                'location' => 'Sabang Coast',
+                'category' => 'stroll',
+                'image' => 'strolls/carou3.jpg',
+            ],
+            [
+                'name' => 'Street Food Market',
+                'description' => 'Savor local delicacies at the vibrant night market, from spicy noodles to sweet desserts.',
+                'location' => 'Sabang Night Market',
+                'category' => 'culiner',
+                'image' => 'strolls/carou4.jpg',
+            ],
+            [
+                'name' => 'Botanical Garden',
+                'description' => 'Stroll through lush greenery and colorful blooms in this tranquil urban oasis.',
+                'location' => 'Sabang Botanical Garden',
+                'category' => 'stroll',
+                'image' => 'strolls/carou6.jpg',
+            ],
+            [
+                'name' => 'Rooftop Cafe',
+                'description' => 'Relish gourmet dishes with a panoramic city view at this trendy rooftop spot.',
+                'location' => 'Sabang Rooftop',
+                'category' => 'culiner',
+                'image' => 'strolls/carou8.jpg',
+            ],
         ];
 
         foreach ($strolls as $stroll) {
