@@ -39,7 +39,9 @@ Route::get('/travelkit', function () {
 
 // Publicly Accessible Resource Index and Show Pages
 // Destinations
-Route::get('/destination', [DestinationController::class, 'index'])->name('destination'); // Custom index name
+Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+Route::get('/destinations/create', [DestinationController::class, 'create'])->name('destinations.create')->middleware('auth', 'role:provider');
+Route::post('/destinations', [DestinationController::class, 'store'])->name('destinations.store')->middleware('auth', 'role:provider');
 Route::get('/destinations/{id}', [DestinationController::class, 'show'])->name('destinations.show');
 
 // Drivers - FIX: Explicitly define index and show to ensure 'show' is available
@@ -56,11 +58,15 @@ Route::get('/tourguide', [TourGuideController::class, 'index'])->name('tourguide
 // Route::get('/tour-guides/{tour_guide}', [TourGuideController::class, 'show'])->name('tour-guides.show');
 
 // Agenda
-Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda'); // Custom index name
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda');
+Route::get('/agendas/create', [AgendaController::class, 'create'])->name('agendas.create')->middleware('auth', 'role:provider');
+Route::post('/agendas', [AgendaController::class, 'store'])->name('agendas.store')->middleware('auth', 'role:provider');
 Route::get('/agendas/{id}', [AgendaController::class, 'show'])->name('agendas.show');
 
 // Strolls
-Route::get('/stroll', [StrollController::class, 'index'])->name('stroll'); // Custom index name
+Route::get('/stroll', [StrollController::class, 'index'])->name('stroll');
+Route::get('/strolls/create', [StrollController::class, 'create'])->name('strolls.create')->middleware('auth', 'role:provider');
+Route::post('/strolls', [StrollController::class, 'store'])->name('strolls.store')->middleware('auth', 'role:provider');
 Route::get('/strolls/{id}', [StrollController::class, 'show'])->name('strolls.show');
 
 
