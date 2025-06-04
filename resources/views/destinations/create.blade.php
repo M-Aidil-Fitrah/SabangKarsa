@@ -80,7 +80,7 @@
                     @enderror
                 </div>
                 <button type="submit" class="bg-amber-400 text-black px-4 py-2 rounded-lg hover:bg-amber-500 transition btn-amber">Simpan Destinasi</button>
-                <a href="{{ route('destination') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition inline-block ml-2">Kembali</a>
+                <a href="{{ route('destinations.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition inline-block ml-2">Kembali</a>
             </form>
         </div>
     </div>

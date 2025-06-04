@@ -17,7 +17,7 @@
                 </a>
             </div>
             <nav class="hidden md:flex space-x-8 ml-8">
-                <a href="{{ route('destination') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link active">DESTINASI</a>
+                <a href="{{ route('destinations.index') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link active">DESTINASI</a>
                 <div x-data="{ open: false }" class="relative">
                     <button
                         @click="open = !open"
@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <a href="{{ route('agenda') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">AGENDA</a>
+                <a href="{{ route('agendas.index') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">AGENDA</a>
                 <a href="{{ route('strolls.index') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">STROLL & KULINER</a>
                 <a href="{{ route('travelkit') }}" class="text-white font-black hover:text-amber-400 transition duration-300 nav-link">TRAVEL KIT</a>
 

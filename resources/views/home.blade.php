@@ -47,7 +47,7 @@
 <section class="py-16 bg-white pr-50 pl-50 mt-5">
     <div class="flex justify-between">
     <h1 class="text-5xl font-black text-black">Let`s Stroll Around</h1>
-    <p class="text-amber-400 mt-3"><a href="{{ route('strolls.index') }}">Lihat Selengkapnya</a></p>
+    <p class="text-amber-400 mt-3"><a href="">Lihat Selengkapnya</a></p>
 </div>
     <div class="flex gap-4 overflow-x-auto mt-10 scroll-smooth">        {{-- card --}}
         <div class="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
@@ -57,7 +57,7 @@
                     Kulineran
                   </p>
 
-                  <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                  <p class="text-amber-500"><a href="">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
               </div>
             <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -77,7 +77,7 @@
                     Peresmian Revitalisasi Monumen
                   </p>
 
-                  <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                  <p class="text-amber-500"><a href="">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
               </div>
             <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -97,7 +97,7 @@
                   Menjelajahi Pusat Kota
                 </p>
 
-                <p class="text-amber-500"><a href="{{ route('strolls.index') }}">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
+                <p class="text-amber-500"><a href="">Read More <span class="fa-solid fa-arrow-right"></span> </a></p>
 
             </div>
           <div class="relative  h-60 overflow-hidden rounded-x-xl bg-clip-border">
@@ -356,7 +356,7 @@
     <h1 class="font-black text-5xl mt-3">Agenda Sabang</h1>
     <p class="mt-5">Sabang memiliki sejumlah agenda yang memikat hati dengan keindahan alamnya yang luar biasa.
         <br> Dari pantai berpasir putih hingga terumbu karang yang memukau, Sabang menawarkan pengalaman tak terlupakan bagi para pelancong. Jelajahi pesona bawah laut, nikmati kehangatan budaya lokal, dan temukan surga tersembunyi di ujung barat Indonesia ini.</p>
-       <a href="{{ route('agenda') }}"> <button class="bg-amber-400 text-black px-6 py-2 mt-5 rounded-lg hover:bg-amber-500 transition btn-amber">lihat semua agenda</button></a>
+       <a href="{{ route('agendas.index') }}"> <button class="bg-amber-400 text-black px-6 py-2 mt-5 rounded-lg hover:bg-amber-500 transition btn-amber">lihat semua agenda</button></a>
     </div></section>
   <x-carousel />
  

@@ -11,7 +11,7 @@ class TourGuideController extends Controller
     public function index()
     {
         $tour_guides = TourGuide::all();
-        return view('tourguide', compact('tour_guides'));
+        return view('tourguides.index', compact('tour_guides'));
     }
 
     public function create()
@@ -20,7 +20,7 @@ class TourGuideController extends Controller
         if (!$user || $user->role !== 'provider') {
             return redirect()->route('login')->with('message', 'Only providers can add tour guides.');
         }
-        return view('tourguide'); // Form tambah ada di view tourguide
+        return view('tourguides.create'); // Form tambah ada di view tourguide
     }
 
     public function store(Request $request)
@@ -43,9 +43,16 @@ class TourGuideController extends Controller
             $data['image'] = $request->file('image')->store('tour_guides', 'public');
         }
 
+
+
         $data['provider_id'] = $user->id;
         TourGuide::create($data);
 
-        return redirect()->route('tourguide')->with('success', 'Tour guide added successfully.');
+        return redirect()->route('tour-guides.index')->with('success', 'Tour guide added successfully.');
+    }
+
+    public function show(TourGuide $tour_guide)
+    {
+        return view('tourguides.show', compact('tour_guide'));
     }
 }

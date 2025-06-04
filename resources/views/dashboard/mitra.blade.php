@@ -20,6 +20,7 @@
                     @csrf
                     <button type="submit" class="text-blue-600 hover:underline mx-2">Logout</button>
                 </form>
+                <a href="{{ route('home') }}" class="text-blue-600 hover:underline mx-2">Profil</a>
             </nav>
         </div>
     </header>
@@ -29,7 +30,7 @@
         <p class="text-lg text-slate-500">
             Kelola layanan Anda di sini. Tambah penawaran, lihat pemesanan, atau update profil Anda.
         </p>
-        <!-- Add more dashboard content as needed -->
+    
     </main>
 
     <script src="{{ asset('storage/js/script.js') }}"></script>
