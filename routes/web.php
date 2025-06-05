@@ -9,22 +9,15 @@ use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\StrollController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\AgendaController;
-use App\Http\Controllers\ProviderController; // Pastikan ini di-import
+use App\Http\Controllers\ProviderController;
+use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// ... route-route lainnya
 
-// --- Public Routes ---
-// Home and Static Pages
+Route::get('/accommodations/{accommodation}', [AccommodationController::class, 'show'])->name('accommodations.show');
+Route::resource('drivers', DriverController::class); // Pastikan baris ini ada dan tidak dikomentari
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -33,9 +26,19 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+Route::post('/destinations', [DestinationController::class, 'store'])->name('destinations.store')->middleware('auth', 'role:provider');
+
+Route::get('/agenda', function () {
+    return view('agenda');
+})->name('agenda');
+
 Route::get('/travelkit', function () {
     return view('travelkit');
 })->name('travelkit');
+
+// Booking route for users
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store')->middleware('auth', 'role:user');
 
 // Publicly Accessible Resource Index and Show Pages
 // Destinations
@@ -84,8 +87,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
-// --- Authenticated User Routes (General) ---
+// Dashboard route for all authenticated users
 Route::middleware(['auth'])->group(function () {
     // Dashboard redirection based on role (optional, adjust as needed)
     Route::get('/dashboard', function () {
@@ -94,29 +96,28 @@ Route::middleware(['auth'])->group(function () {
         }
         return view('home'); // Default dashboard for regular users
     })->name('dashboard');
-
-    // Booking route for regular users
-    Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store')->middleware('role:user');
 });
 
+// Layanan routes (dengan Route::resource untuk CRUD lengkap)
+Route::middleware(['auth'])->group(function () {
+    Route::resource('accommodations', AccommodationController::class)->except(['show']);
+    Route::resource('tour-guides', TourGuideController::class)->except(['show']);
+    Route::resource('drivers', DriverController::class)->except(['show']);
+    Route::resource('strolls', StrollController::class)->except(['show']);
+});
 
-// --- Provider-Specific Routes ---
+// Provider-specific routes
 Route::middleware(['auth', 'role:provider'])->group(function () {
-    // Provider Dashboard
-    Route::get('/dashboard/mitra', function () {
-        return view('dashboard.mitra'); // Pastikan view ini ada
-    })->name('dashboard.mitra');
-
-    // Provider Profile Creation
-    Route::get('/provider/create', [ProviderController::class, 'create'])->name('provider.create');
+    Route::get('/provider/create', [ProviderController::class, 'create'])->name('provider.create'); // Ensure this is present
     Route::post('/provider', [ProviderController::class, 'store'])->name('provider.store');
+});
 
-    // Resource Management (Create, Store, Edit, Update, Destroy) for Providers
-    // Note: 'index' and 'show' are defined as public routes above.
-    Route::resource('accommodations', AccommodationController::class)->except(['index', 'show']);
-    Route::resource('drivers', DriverController::class)->except(['index', 'show']);
-    Route::resource('tour-guides', TourGuideController::class)->except(['index', 'show']); // Using 'tour-guides' as resource name
-    Route::resource('destinations', DestinationController::class)->except(['index', 'show']);
-    Route::resource('agendas', AgendaController::class)->except(['index', 'show']);
-    Route::resource('strolls', StrollController::class)->except(['index', 'show']);
+// Booking route for users
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store')->middleware('auth', 'role:user');
+
+// Add a specific dashboard for mitra (provider)
+Route::middleware(['auth', 'role:provider'])->group(function () {
+    Route::get('/dashboard/mitra', function () {
+        return view('dashboard.mitra');
+    })->name('dashboard.mitra');
 });

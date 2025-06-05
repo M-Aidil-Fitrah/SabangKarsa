@@ -6,22 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Accommodation extends Model
 {
-    
-    protected $fillable = [
-        'name',
-        'description',
-        'location',
-        'price_per_night',
-        'provider_id',
-        'image',
-        'amenities', // Tambahkan ini
-        'type',      // Tambahkan ini
-        'owner_phone', // Tambahkan ini
-    ];
-
-    protected $casts = [
-        'amenities' => 'array', // Ini akan otomatis mengonversi JSON ke array PHP
-    ];
+    protected $fillable = ['name', 'description', 'location', 'price_per_night', 'provider_id', 'image'];
 
     public function provider()
     {
