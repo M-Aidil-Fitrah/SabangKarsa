@@ -46,7 +46,7 @@ class StrollController extends Controller
         $data['provider_id'] = $user->id;
         Stroll::create($data);
 
-        return redirect()->route('stroll')->with('success', 'Stroll added successfully.');
+        return redirect()->route('strolls.index')->with('success', 'Stroll added successfully.');
     }
 
     public function show($id)

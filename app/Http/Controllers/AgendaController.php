@@ -45,7 +45,7 @@ class AgendaController extends Controller
         $data['provider_id'] = $user->id;
         Agenda::create($data);
 
-        return redirect()->route('agenda')->with('success', 'Agenda added successfully.');
+        return redirect()->route('agendas.index')->with('success', 'Agenda added successfully.');
     }
 
     public function show($id)

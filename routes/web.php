@@ -12,7 +12,6 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ProviderController;
 
-// --- Provider-Specific Routes ---
 Route::middleware(['auth', 'role:provider'])->group(function () {
     // Provider Dashboard
     Route::get('/dashboard/mitra', function () {
@@ -31,9 +30,6 @@ Route::middleware(['auth', 'role:provider'])->group(function () {
     Route::resource('agendas', AgendaController::class)->except(['index', 'show']);
     Route::resource('strolls', StrollController::class)->except(['index', 'show']);
 });
-
-// --- Public Routes ---
-// Home and Static Pages
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -94,3 +90,4 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store')->middleware('role:user');
 });
 
+// --- Provider-Specific Routes ---

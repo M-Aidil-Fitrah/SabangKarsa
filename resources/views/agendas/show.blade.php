@@ -21,7 +21,7 @@
             <div class="p-6">
                 <h3 class="text-2xl font-bold mb-2">{{ $agenda->name }}</h3>
                 <p class="text-gray-600 text-base mb-4">{{ $agenda->description }}</p>
-                <a href="{{ route('agenda') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Agenda</a>
+                <a href="{{ route('agendas.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Agenda</a>
             </div>
         </div>
     </div>

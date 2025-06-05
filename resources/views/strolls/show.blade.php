@@ -24,7 +24,7 @@
                     <h3 class="text-2xl font-bold mb-2">{{ $stroll->name }}</h3>
                     <p class="text-gray-600 text-base mb-2">Lokasi: {{ $stroll->location }}</p>
                     <p class="text-gray-600 text-base mb-2">Kategori: {{ ucfirst($stroll->category) }}</p>
-                    <a href="{{ route('stroll') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Stroll/Kuliner</a>
+                    <a href="{{ route('strolls.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Stroll/Kuliner</a>
                 </div>
             </div>
             <!-- Description Section -->

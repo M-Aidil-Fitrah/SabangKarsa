@@ -62,7 +62,7 @@
                         <i class="fas fa-map-marker-alt text-gray-500 mr-1"></i>
                         <span class="text-gray-600">{{ $destination->distance_from_city_center }} dari pusat kota</span>
                     </div>
-                    <a href="{{ route('destination') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Destinasi</a>
+                    <a href="{{ route('destinations.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition mt-4 inline-block">Kembali ke Daftar Destinasi</a>
                 </div>
             </div>
             <!-- Description Section -->
